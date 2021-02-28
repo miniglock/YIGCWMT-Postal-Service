@@ -1,6 +1,6 @@
-<apex:page controller="HomePageListController">
+<apex:page controller="HomePageListController" showHeader="true">
     <apex:pageBlock title="All Your Mail">
-        <apex:pageBlockTable value="{!hello}" var="d">
+        <apex:pageBlockTable value="{!hello}" var="d" onrowmouseover="this.classList.remove('highlight')">
             <apex:column headerValue="Mail in Transit">
                 <apex:pageBlockTable value="{!TransitMail}" var="m">
                     <apex:column headerValue="Tracking Number">
@@ -20,13 +20,13 @@
                         <apex:outputText value="Unknown" rendered="{!m.Thickness__c==null}"/>
                     </apex:column>
                     <apex:column headerValue="Insurance" value="{!m.Insurance__c}"/>
-                    <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
+                    <apex:column headerValue="Insurance Amount">
+                        <apex:outputField value="{!m.Insured_Value__c}" rendered="{!m.Insured_Value__c!=null}"/>
+                        <apex:outputText value="Uninsured" rendered="{!m.Insured_Value__c==null}"/>
+                    </apex:column>
                 </apex:pageBlockTable>
             </apex:column>
-            <!--<apex:column headerValue="Missing Mail" rendered="{!MissingMail.size==0}">
-                <apex:message>As usual, all your mail has been delivered</apex:message>
-            </apex:column>-->
-            <apex:column headerValue="Missing Mail" rendered="{!MissingMail.size>0}">
+            <apex:column headerValue="Missing Mail" rendered="{!MissingMail.size>0}" style="vertical-align:top">
                 <apex:pageBlockTable value="{!MissingMail}" var="m">
                     <apex:column headerValue="Tracking Number">
                         <apex:outputField value="{!m.Name}"/>
@@ -48,6 +48,9 @@
                     <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
                 </apex:pageBlockTable>
             </apex:column>
+            <apex:facet name="footer">
+                <apex:outputText value="As usual, all of your packages are being handled with care!" rendered="{!MissingMail.size==0}"/>
+            </apex:facet>
         </apex:pageBlockTable>
     </apex:pageBlock>
 

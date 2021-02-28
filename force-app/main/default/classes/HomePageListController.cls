@@ -9,7 +9,8 @@ public with sharing class HomePageListController {
         get {
 
             if(setCon==null){
-                //User currentUser = [SELECT Id, ContactId FROM User WHERE Id=:UserInfo.getUserId()]; This is final code; below is for testing purposes
+                //User currentUser = [SELECT Id, ContactId FROM User WHERE Id=:UserInfo.getUserId()]; 
+                //Above is final code; below is for testing purposes
                 User currentUser = [SELECT Id, ContactId FROM User WHERE Id='0054x000004KA2MAAW'];
                 setCon = new ApexPages.StandardSetController(Database.getQueryLocator([SELECT Id, Name, Delivery_Status__c, Height__c, Length__c, Thickness__c, Weight__c, Insurance__c, Insured_Value__c FROM Mail__c WHERE Inhabitant__r.Contact__c = :currentUser.ContactId]));
             }
