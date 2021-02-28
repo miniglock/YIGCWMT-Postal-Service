@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visible_Address</fullName>
+    <columns>NAME</columns>
+    <columns>Visible_Address__c</columns>
+    <columns>Mailing_Address__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Visible Address</label>
+</ListView>
