@@ -1,18 +1,18 @@
 <apex:page controller="TrackingController"  docType="html-5.0">
     <apex:pageBlock title="Track Your Shipment">
-<apex:form>
-    <apex:outputLabel for='trackNum' value="Enter Tracking Number"/><br/>
-    <apex:input   value="{!tra}" type='number'  id='trackNum'/>
-    <apex:commandButton   value="Track" id="trackButton" action="{!search}"/><br/>
+<apex:form >
+    <apex:outputLabel for="trackNum" value="Enter Tracking Number"/><br/>
+    <apex:input value="{!tra}" type="number"  id="trackNum"/>
+    <apex:commandButton value="Track" id="trackButton" action="{!search}"/><br/>
 </apex:form>
 <apex:outputText value="Tracking Number Not Exist" rendered="{!IF(shoerror==True,true,false)}"/>
 </apex:pageBlock>
-<apex:pageBlock title="Package Details" id='Detailblock' rendered="{!isvis}">
-    <apex:outputLabel  value="Tracking Number: "/>
+<apex:pageBlock title="Package Details" id="Detailblock" rendered="{!isvis}">
+    <apex:outputLabel value="Tracking Number: "/>
     <apex:outputText value="{!tra}"></apex:outputText><br/>
-    <apex:outputLabel  value="Recipient and Shipping Address: "/>
-    <apex:outputText value="{!mailne.Recipient__c}"></apex:outputText><br/>
-    <apex:outputLabel  value="Delivery Status: "/>
+    <apex:outputLabel value="Recipient and Shipping Address: "/><br/>
+    <apex:outputText value="{!mailne.Recipient__C}" escape="false"></apex:outputText><br/>
+    <apex:outputLabel value="Delivery Status: "/>
     <apex:outputText value="{!mailne.Delivery_Status__c}"></apex:outputText>
 </apex:pageBlock>
 </apex:page>

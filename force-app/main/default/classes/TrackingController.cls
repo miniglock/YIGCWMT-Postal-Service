@@ -3,6 +3,7 @@ public with sharing class TrackingController {
      public Integer tra {get; set;}
      public Boolean isvis{get; set;}
      public Boolean shoerror{get; set;} 
+   //  public String recep{get; set;}
 
     public TrackingController() {
         isvis=false;
@@ -19,6 +20,7 @@ public with sharing class TrackingController {
            if(n==tra){
             isvis=true;
             mailne=c;
+          //  recep=mailne.Recipient__C.replaceAll('<br>', ', ');
             shoerror=false;
            break;
         }else {

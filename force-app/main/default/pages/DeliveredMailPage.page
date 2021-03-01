@@ -1,5 +1,5 @@
 <apex:page controller="HomePageListDeliveredMailController" showHeader="true">
-    <apex:form>
+    <apex:form >
         <apex:pageBlock title="Delivered Mail">
                 <apex:pageBlockTable value="{!DeliveredMail}" var="m">
                     <apex:column headerValue="Tracking Number">
@@ -21,7 +21,7 @@
                     <apex:column headerValue="Insurance" value="{!m.Insurance__c}"/>
                     <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
                 </apex:pageBlockTable>
-                <apex:panelGrid columns="4" rendered="{!DeliveredMail.size>5}">
+                <apex:panelGrid columns="4" rendered="{!recordCount>5}">
                     <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
                     <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}"/>
                     <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}"/>

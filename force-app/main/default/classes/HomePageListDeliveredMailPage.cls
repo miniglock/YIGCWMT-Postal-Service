@@ -1,4 +1,4 @@
-public inherited sharing class HomePageListInTransitMailController {
+public inherited sharing class HomePageListDeliveredMailPage {
     public Integer recordCount{get;set;}
     public static Integer pageSize = 6;
 
@@ -10,7 +10,7 @@ public inherited sharing class HomePageListInTransitMailController {
                 //User currentUser = [SELECT Id, ContactId FROM User WHERE Id=:UserInfo.getUserId()]; 
                 //Above is final code; below is for testing purposes
                 User currentUser = [SELECT Id, ContactId FROM User WHERE Id='0054x000004KA2MAAW'];
-                setCon = new ApexPages.StandardSetController(Database.getQueryLocator([SELECT Id, Name, Delivery_Status__c, Height__c, Length__c, Thickness__c, Weight__c, Insurance__c, Insured_Value__c FROM Mail__c WHERE Inhabitant__r.Contact__c = :currentUser.ContactId AND Delivery_Status__c != 'Delivered' AND Delivery_Status__c != 'Missing' ORDER BY Name]));
+                setCon = new ApexPages.StandardSetController(Database.getQueryLocator([SELECT Id, Name, Delivery_Status__c, Height__c, Length__c, Thickness__c, Weight__c, Insurance__c, Insured_Value__c FROM Mail__c WHERE Inhabitant__r.Contact__c = :currentUser.ContactId AND Delivery_Status__c = 'Delivered' ORDER BY Name]));
                 setCon.setPageSize(pageSize);
                 recordCount = setCon.getResultSize();
             }
@@ -20,7 +20,7 @@ public inherited sharing class HomePageListInTransitMailController {
 
     }
 
-    public List<Mail__c> getInTransitMail(){
+    public List<Mail__c> getDeliveredMail(){
         List<Mail__c> mailList = new List<Mail__c>();
         List<Mail__c> records = setCon.getRecords();
         for(Mail__c mail : records){
