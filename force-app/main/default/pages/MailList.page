@@ -1,5 +1,6 @@
 <apex:page controller="HomePageListController" showHeader="true">
     <apex:pageBlock title="All Your Mail">
+        <apex:form >
         <apex:pageBlockTable value="{!hello}" var="d" onrowmouseover="this.classList.remove('highlight')">
             <apex:column headerValue="Mail in Transit">
                 <apex:pageBlockTable value="{!TransitMail}" var="m">
@@ -25,6 +26,12 @@
                         <apex:outputText value="Uninsured" rendered="{!m.Insured_Value__c==null}"/>
                     </apex:column>
                 </apex:pageBlockTable>
+                <apex:panelGrid columns="4" rendered="{!TransitMail.size>5}">
+                    <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}"/>
+                    <apex:commandButton value="Last" action="{!last}" disabled="{!!hasNext}"/>
+                </apex:panelGrid>
             </apex:column>
             <apex:column headerValue="Missing Mail" rendered="{!MissingMail.size>0}" style="vertical-align:top">
                 <apex:pageBlockTable value="{!MissingMail}" var="m">
@@ -47,11 +54,18 @@
                     <apex:column headerValue="Insurance" value="{!m.Insurance__c}"/>
                     <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
                 </apex:pageBlockTable>
+                <apex:panelGrid columns="4" rendered="{!MissingMail.size>5}">
+                    <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}"/>
+                    <apex:commandButton value="Last" action="{!last}" disabled="{!!hasNext}"/>
+                </apex:panelGrid>
             </apex:column>
             <apex:facet name="footer">
                 <apex:outputText value="As usual, all of your packages are being handled with care!" rendered="{!MissingMail.size==0}"/>
             </apex:facet>
         </apex:pageBlockTable>
+    </apex:form>
     </apex:pageBlock>
 
 </apex:page>

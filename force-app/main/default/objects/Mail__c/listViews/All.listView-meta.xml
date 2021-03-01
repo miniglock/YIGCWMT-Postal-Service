@@ -5,5 +5,10 @@
     <columns>Recipient__c</columns>
     <columns>Delivery_Status__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Mail__c.Master1</value>
+    </filters>
     <label>All</label>
 </ListView>

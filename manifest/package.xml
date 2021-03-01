@@ -36,9 +36,9 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <types>
+    <!--<types>
         <members>Security</members>
         <name>Settings</name>
-    </types>
+    </types>-->
     <version>50.0</version>
 </Package>

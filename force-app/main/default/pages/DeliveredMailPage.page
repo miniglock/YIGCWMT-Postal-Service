@@ -1,0 +1,33 @@
+<apex:page controller="HomePageListDeliveredMailController" showHeader="true">
+    <apex:form>
+        <apex:pageBlock title="Missing Mail">
+                <apex:pageBlockTable value="{!DeliveredMail}" var="m">
+                    <apex:column headerValue="Tracking Number">
+                        <apex:outputField value="{!m.Name}"/>
+                    </apex:column>
+                    <apex:column value="{!m.Delivery_Status__c}"/>
+                    <apex:column headerValue="Package Height">
+                        <apex:outputField value="{!m.Height__c}" rendered="{!m.Height__c!=null}"/>
+                        <apex:outputText value="Unknown" rendered="{!m.Height__c==null}"/>
+                    </apex:column>
+                    <apex:column headerValue="Package Length">
+                        <apex:outputField value="{!m.Length__c}" rendered="{!m.Length__c!=null}"/>
+                        <apex:outputText value="Unknown" rendered="{!m.Length__c==null}"/>
+                    </apex:column>
+                    <apex:column headerValue="Package Thickness">
+                        <apex:outputField value="{!m.Thickness__c}" rendered="{!m.Thickness__c!=null}"/>
+                        <apex:outputText value="Unknown" rendered="{!m.Thickness__c==null}"/>
+                    </apex:column>
+                    <apex:column headerValue="Insurance" value="{!m.Insurance__c}"/>
+                    <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
+                </apex:pageBlockTable>
+                <apex:panelGrid columns="4" rendered="{!DeliveredMail.size>5}">
+                    <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}"/>
+                    <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}"/>
+                    <apex:commandButton value="Last" action="{!last}" disabled="{!!hasNext}"/>
+                </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

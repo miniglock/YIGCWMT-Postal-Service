@@ -11,8 +11,8 @@
         </apex:pageBlock>
     </apex:form>
 
-    <apex:form>
-        <apex:pageBlock title = "Update Contact Info" mode="edit">
+    <apex:form >
+        <apex:pageBlock title="Update Contact Info" mode="edit">
             <apex:pageBlockSection title="My Content Section" columns="2">
                 <apex:inputField value="{!MyContact.Firstname}"/><br/>
                 <apex:inputField value="{!MyContact.Lastname}"/><br/>
@@ -20,7 +20,7 @@
                 <apex:inputField value="{!MyContact.Phone}"/><br/>
                 <apex:inputField value="{!MyContact.MobilePhone}"/><br/>
             </apex:pageBlockSection>
-            <apex:pageBlockButtons>
+            <apex:pageBlockButtons >
                 <apex:commandButton action="{!save}" value="Update Contact Details"/>
             </apex:pageBlockButtons>
         </apex:pageBlock>
