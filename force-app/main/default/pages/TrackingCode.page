@@ -14,5 +14,26 @@
     <apex:outputText value="{!mailne.Recipient__C}" escape="false"></apex:outputText><br/>
     <apex:outputLabel value="Delivery Status: "/>
     <apex:outputText value="{!mailne.Delivery_Status__c}"></apex:outputText>
+    <apex:form> 
+    <!--apex:facet name="header">Insured</apex:facet-->
+    <left>
+        <apex:outputLabel value="Insured "/>
+        <apex:inputCheckbox label='Insured' value="{!mailne.Insurance__C}" onclick='return false' />
+    </left>
+</apex:form>
+<apex:form rendered="{!inshow}">
+    <apex:outputLabel value="Insurance Value: "/>
+    <apex:outputLabel value="$"/>
+    <apex:outputText value="{!mailne.Insured_Value__c}"/>
+    <br/>
+    <left>
+        <apex:outputLabel value="Submitted For Insurance Payout Approval"/>
+        <apex:inputCheckbox label='Insured' value="{!mailne.Submit_For_Insurance__c}" onclick='return false' />
+    </left>
+</apex:form>
+<apex:form rendered="{!payout}">
+    <apex:outputLabel value="payout Status: "/>
+    <apex:outputText value="{!mailne.Approval_Status__c}"/>
+</apex:form>
 </apex:pageBlock>
 </apex:page>
