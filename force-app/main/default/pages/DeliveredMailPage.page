@@ -1,6 +1,6 @@
 <apex:page controller="HomePageListDeliveredMailController" showHeader="true">
     <apex:form>
-        <apex:pageBlock title="Missing Mail">
+        <apex:pageBlock title="Delivered Mail">
                 <apex:pageBlockTable value="{!DeliveredMail}" var="m">
                     <apex:column headerValue="Tracking Number">
                         <apex:outputField value="{!m.Name}"/>

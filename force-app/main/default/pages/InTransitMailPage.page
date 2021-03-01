@@ -1,6 +1,6 @@
 <apex:page controller="HomePageListInTransitMailController" showHeader="true">
     <apex:form>
-        <apex:pageBlock title="Missing Mail">
+        <apex:pageBlock title="In Transit Mail">
                 <apex:pageBlockTable value="{!InTransitMail}" var="m">
                     <apex:column headerValue="Tracking Number">
                         <apex:outputField value="{!m.Name}"/>
