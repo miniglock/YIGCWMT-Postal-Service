@@ -10,7 +10,7 @@ public inherited sharing class HomePageListMissingMailController {
                 //User currentUser = [SELECT Id, ContactId FROM User WHERE Id=:UserInfo.getUserId()]; 
                 //Above is final code; below is for testing purposes
                 User currentUser = [SELECT Id, ContactId FROM User WHERE Id='0054x000004KA2MAAW'];
-                setCon = new ApexPages.StandardSetController(Database.getQueryLocator([SELECT Id, Name, Delivery_Status__c, Height__c, Length__c, Thickness__c, Weight__c, Insurance__c, Insured_Value__c FROM Mail__c WHERE Inhabitant__r.Contact__c = :currentUser.ContactId AND Delivery_Status__c = 'Missing' ORDER BY Name]));
+                setCon = new ApexPages.StandardSetController(Database.getQueryLocator([SELECT Id, Name, Delivery_Status__c, Height__c, Length__c, Thickness__c, Weight__c, Insurance__c, Insured_Value__c, Submit_For_Insurance__c, Approval_Status__c FROM Mail__c WHERE Inhabitant__r.Contact__c = :currentUser.ContactId AND Delivery_Status__c = 'Missing' ORDER BY Name]));
                 setCon.setPageSize(pageSize);
                 recordCount = setCon.getResultSize();
             }
@@ -18,6 +18,10 @@ public inherited sharing class HomePageListMissingMailController {
         }
         set;
 
+    }
+
+    public void insuranceSubmit(){
+        
     }
 
     public List<Mail__c> getMissingMail(){

@@ -1,0 +1,5 @@
+<apex:page standardController="Case" recordSetVar="cases">
+    <apex:pageBlock >
+    	
+    </apex:pageBlock>
+</apex:page>

@@ -4,10 +4,15 @@
                 <apex:pageBlockTable value="{!MissingMail}" var="m">
                     <apex:column headerValue="Tracking Number">
                         <apex:outputField value="{!m.Name}"/>
-                    </apex:column>
-                    <apex:column headerValue="Delivery Status" value="{!m.Delivery_Status__c}"/>
+                    </apex:column> 
                     <apex:column headerValue="Insurance" value="{!m.Insurance__c}"/>
                     <apex:column headerValue="Insurance Amount" value="{!m.Insured_Value__c}"/>
+                    <apex:column headerValue="Submit for Insurance">
+                        <apex:outputField value="{!m.Submit_For_Insurance__c}" rendered="{!m.Insurance__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Approval Status">
+                        <apex:outputField value="{!m.Approval_Status__c}" rendered="{!m.Approval_Status__c!=null}"/>
+                    </apex:column>
                 </apex:pageBlockTable>
                 <apex:panelGrid columns="4" rendered="{!recordCount>5}">
                     <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
