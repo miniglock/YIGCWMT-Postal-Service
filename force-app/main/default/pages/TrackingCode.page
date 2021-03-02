@@ -4,7 +4,7 @@
             <apex:outputLabel for="trackNum" value="Enter Tracking Number"/><br/>
             <apex:input value="{!tra}" type="number"  id="trackNum"/>
             <apex:commandButton value="Track" id="trackButton" action="{!search}"/><br/>
-            <apex:commandButton value="Submit For Insurance" action="{!insuranceSubmit}" disabled="{!mailne.Approval_Status__c!=null}&&{!mailne.Insurance__c==false}" rendered="{!mailne.Insurance__c}"/>
+            <apex:commandButton value="Submit For Insurance" action="{!insuranceSubmit}" rendered="{!AND(mailne.Submit_For_Insurance__c==false, mailne.Insurance__c==true)}"/>
         </apex:form>
         <apex:outputText value="Tracking Number Not Exist" rendered="{!IF(shoerror==True,true,false)}"/>
     </apex:pageBlock>
