@@ -1,6 +1,6 @@
 <apex:page controller="HomePageListMissingMailController" showHeader="true">
     <apex:form >
-        <apex:pageBlock title="Missing Mail" rendered="{!MissingMail.size>0}">
+        <apex:pageBlock title="Missing Mail">
                 <apex:pageBlockTable value="{!MissingMail}" var="m">
                     <apex:column headerValue="Tracking Number">
                         <apex:outputField value="{!m.Name}"/>
@@ -14,7 +14,7 @@
                         <apex:outputField value="{!m.Approval_Status__c}" rendered="{!m.Approval_Status__c!=null}"/>
                     </apex:column>
                 </apex:pageBlockTable>
-                <apex:panelGrid columns="4" rendered="{!recordCount>5}">
+                <apex:panelGrid columns="4" rendered="{!recordCount>6}">
                     <apex:commandButton value="First" action="{!first}" disabled="{!!hasPrevious}"/>
                     <apex:commandButton value="Previous" action="{!previous}" disabled="{!!hasPrevious}"/>
                     <apex:commandButton value="Next" action="{!next}" disabled="{!!hasNext}"/>

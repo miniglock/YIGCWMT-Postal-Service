@@ -19,7 +19,7 @@
         <!--apex:facet name="header">Insured</apex:facet-->
             <left>
                 <apex:outputLabel value="Insured "/>
-                <apex:inputCheckbox label="Insured" value="{!mailne.Insurance__c}" onclick="return false" />
+                <apex:outputField label="Insured" value="{!mailne.Insurance__c}"/>
             </left>
         </apex:form>
         <apex:form rendered="{!inshow}">
@@ -29,7 +29,7 @@
             <br/>
             <left>
                 <apex:outputLabel value="Submitted For Insurance Payout Approval"/>
-                <apex:inputCheckbox label="Insured" value="{!mailne.Submit_For_Insurance__c}" onclick="return false" />
+                <apex:outputField label="Insured" value="{!mailne.Submit_For_Insurance__c}"/>
             </left>
         </apex:form>
         <apex:form rendered="{!payout}">

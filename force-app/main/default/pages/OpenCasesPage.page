@@ -1,4 +1,4 @@
-<apex:page controller="openCases">
+<apex:page controller="OpenCases">
     <apex:pageBlock title="Open Cases">
         <apex:pageBlockTable value="{!OpenCases}" var="cs">
             <apex:column headerValue="Case Number" value="{!cs.CaseNumber}"></apex:column>
