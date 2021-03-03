@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Mail</fullName>
+    <columns>NAME</columns>
+    <columns>Delivery_Status__c</columns>
+    <columns>Insurance__c</columns>
+    <columns>Insured_Value__c</columns>
+    <columns>Submit_For_Insurance__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Delivery_Status__c</field>
+        <operation>equals</operation>
+        <value>Missing</value>
+    </filters>
+    <label>Missing Mail</label>
+</ListView>

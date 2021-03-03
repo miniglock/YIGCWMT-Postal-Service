@@ -12,6 +12,10 @@
             console.log('label'+label+'END3');
             urlEvent.setParams({"url":"/ "});
             urlEvent.fire();
+        }else if(label=="Log Out"){
+            console.log('label'+label+'END3');
+            urlEvent.setParams({"url":"https://yigcwmt-developer-edition.na150.force.com/tracking/secur/logout.jsp"});
+            urlEvent.fire();
         }
     }
 })

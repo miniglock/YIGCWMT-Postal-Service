@@ -1,5 +1,5 @@
 <aura:component implements="forceCommunity:profileMenuInterface" access="global">
-    <aura:attribute name="options" type="String[]" default="Home,My Account Info"/>
+    <aura:attribute name="options" type="String[]" default="Home,My Account Info,Log Out"/>
     <ui:menu >
         <ui:menuTriggerLink aura:id="trigger" label="Profile Menu">
             <lightning:icon iconName="utility:settings" size="small"/> 
