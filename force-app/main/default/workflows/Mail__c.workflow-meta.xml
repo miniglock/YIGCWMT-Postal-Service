@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_CEO_of_Missing_Mail</fullName>
+        <description>Notify CEO of Missing Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CEO_Notification_for_Missing_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>booger_test</fullName>
+        <description>booger test</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>charles.kosoy@mindful-fox-inikkf.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SupportCaseResponse</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Not_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Denied</literalValue>
+        <name>Approval Status to Not Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insurance_Claim_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Insurance Claim Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Insurance_Claim_Status</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Insurance Claim Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Mail Lost CEO Notification</fullName>
+        <actions>
+            <name>Notify_CEO_of_Missing_Mail</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Mail__c.Delivery_Status__c</field>
+            <operation>equals</operation>
+            <value>Missing</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Issue_Payout</fullName>
+        <assignedTo>charles.kosoy@mindful-fox-inikkf.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Issue Payout</subject>
+    </tasks>
+</Workflow>
