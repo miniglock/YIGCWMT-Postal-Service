@@ -25,5 +25,18 @@ YIGCWMT Postal Service is a Salesforce CRM Application and Experience Cloud Port
   * - Implement Sales Cloud in Experience Cloud further improving workplace productivity
   * - Implement column sorting on various list Visual Force pages for customers
 
+## Retrospective
+ * Positives
+ * - Working as a team
+ * - Open about issues and always having someone around willing to help
+ * - Finished on time
+ * - Allowing people to choose what they worked on meant greater per-participant interest
+ * - Polished product
+ * To Improve
+ * - Starting sooner and implementing an Agile framework from the beginning instead of partway
+ * - More even assignment of roles so everyone could have done a bit of everything
+ * - Better time management relating to deadlines
+ * - Improved knowledge and understanding of limits and restrictions
+
 ## Contributors
 Asija Watson, Charles Kosoy, Clara Mahenzi, John Carrigan, Mena Soliman
