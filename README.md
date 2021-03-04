@@ -1,18 +1,29 @@
-# Salesforce DX Project: Next Steps
+# Postalforce - Postal Community
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Project Description
 
-## How Do You Plan to Deploy Your Changes?
+YIGCWMT Postal Service is a Salesforce CRM Application and Experience Cloud Portal which allows employees to create and track and customers to track packages on their path through the delivery process. Employees can log into the application and depending on their profile and role have access to those data and features required to perform their work. Customers can log into the Experience Cloud Portal and track their packages, submit web-to-case forms, and submit missing and insured packages for insurance refunds in order to reduce the strain on employees and improve productivity.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Technologies Used
 
-## Configure Your Salesforce DX Project
+* Github
+* Visual Studio Code
+* Salesforce
+* Google Suite
+* SFDX
+* Experience Cloud
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Features
+  * Current:
+  * - Internal package tracking and automated CEO notification of missing packages
+  * - Internal insurance approval process with automated approval under $100
+  * - Customer triggered insurance approval process with guaranteed review for any amount
+  * - Paginated list views for customer package tracking filtered by in transit, delivered, and missing
+  * - Customer case submission and tracking with a customer support page
+  * Future:
+  * - Implement customer commenting on open cases
+  * - Implement Sales Cloud in Experience Cloud further improving workplace productivity
+  * - Implement column sorting on various list Visual Force pages for customers
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Contributors
+Asija Watson, Charles Kosoy, Clara Mahenzi, John Carrigan, Mena Soliman
